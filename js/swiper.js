@@ -101,8 +101,8 @@ const similarSwiper = new Swiper(".swiper.similar-swiper", {
   spaceBetween: 10,
   
   navigation:{
-    nextEl:".swiper-button-next",
-    prevEl:".swiper-button-prev"
+    nextEl:".swiper-button-next.similar-next",
+    prevEl:".swiper-button-prev.similar-prev"
   },
   // Responsive breakpoints
   breakpoints: {

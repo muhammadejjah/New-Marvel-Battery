@@ -679,7 +679,7 @@ body {
     transform: translateY(-50%);
     padding: 8px;
     border-radius: 20px;
-    background-color: var(--main-text-color);
+    
 }
 
 .open-tech {
@@ -693,7 +693,7 @@ body {
     font-size: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--main-text-color);
+    
     padding: 8px;
     border-radius: 20px;
 }
@@ -958,71 +958,38 @@ ul {
     width: 80%;
     max-width: 384px;
     margin: 30px auto 20px;
-    background: transparent;
+    background: transparent !important;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 0px;
     z-index: 3 !important;
+    border: none !important;
+    --bs-accordion-bg: transparent !important;
+    --bs-accordion-border-color: transparent !important;
+
 }
 
-.accordion .link {
-    cursor: pointer;
-    display: block;
-    padding: 15px 15px 15px 15px;
+.accordion-button {
+    border: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    font-weight: 600;
     color: var(--black-color);
-    font-size: 14px;
-    font-weight: 700;
-    /* border-bottom: 1px solid #CCC; */
-    position: relative;
-    -webkit-transition: all 0.4s ease;
-    -o-transition: all 0.4s ease;
-    transition: all 0.4s ease;
 }
 
-.accordion li:last-child .link {
-    border-bottom: 0;
-}
-
-.accordion li i {
-    position: absolute;
-    top: 16px;
-    left: 12px;
-    font-size: 18px;
+.accordion-button:not(.collapsed) {
     color: var(--black-color);
-    -webkit-transition: all 0.4s ease;
-    -o-transition: all 0.4s ease;
-    transition: all 0.4s ease;
 }
 
-.accordion li i.fa-chevron-down {
-    right: 12px;
-    left: auto;
-    font-size: 16px;
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23666'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
 }
-
-.accordion li.open .link {
-    color: var(--main-text-color);
-}
-
-.accordion li.open i {
-    color: var(--main-text-color);
-}
-
-.accordion li.open i.fa-chevron-down {
-    -webkit-transform: rotate(270deg);
-    -ms-transform: rotate(270deg);
-    -o-transform: rotate(270deg);
-    transform: rotate(270deg);
-}
-
 
 .submenu {
-    display: none;
     background: transparent;
     font-size: 14px;
 }
 
-.submenu li {}
 
 .submenu a {
     display: block;
@@ -1044,6 +1011,8 @@ ul {
     transform: translateX(20px);
     font-weight: 600;
 }
+
+
 
 .sub-card {
     display: flex;
@@ -1175,7 +1144,6 @@ ul {
 
 .product-card p {
     color: var(--black-color);
-    margin-top: 5px;
     margin-bottom: 0;
     opacity: 85%;
 }
@@ -1297,10 +1265,12 @@ ul {
     position: sticky;
     top: 70px;
 }
-.xzoom{
+
+.xzoom {
     border: none !important;
     box-shadow: none !important;
 }
+
 .product-title {
     width: fit-content;
     color: #2E90DD;

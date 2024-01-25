@@ -285,8 +285,10 @@
             <div class="row">
                 <div class="center gap-3 flex-column col-xs-12 col-lg-6 ">
                     <h1 class="title">Category</h1>
-                    <p class="text-center black-color  ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, fugiat aliquid quod ducimus omnis
-                        sapiente exercitationem. Magni dolores molestias, atque, perferendis possimus ipsa, ratione dolorem
+                    <p class="text-center black-color  ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
+                        fugiat aliquid quod ducimus omnis
+                        sapiente exercitationem. Magni dolores molestias, atque, perferendis possimus ipsa, ratione
+                        dolorem
                         mollitia in cupiditate animi aut.
                     </p>
                 </div>
@@ -299,10 +301,10 @@
     <section class="container">
         <div class="row">
             <div class="col-sm-12 col-lg-4">
-                <ul id="accordion" class="accordion">
-                    <li>
+                <!-- <ul id="accordion" class="accordion">
+                    <li class="open">
                         <div class="link">Batteries<i class="fa fa-chevron-down"></i></div>
-                        <ul class="submenu">
+                        <ul class="submenu" >
                             <li><a class="active" href="#">Dell Acron</a></li>
                             <li><a href="#">HP Envy</a></li>
                             <li><a href="#">Macbook Air</a></li>
@@ -333,7 +335,63 @@
                             <li><a href="#">Yahoo</a></li>
                         </ul>
                     </li>
-                </ul>
+                </ul> -->
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                aria-controls="panelsStayOpen-collapseOne">
+                                Batteries
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <ul class="submenu" >
+                                    <li><a class="active" href="#">Dell Acron</a></li>
+                                    <li><a href="#">HP Envy</a></li>
+                                    <li><a href="#">Macbook Air</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseTwo">
+                                Accordion Item #2
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <ul class="submenu" >
+                                    <li><a class="active" href="#">Dell Acron</a></li>
+                                    <li><a href="#">HP Envy</a></li>
+                                    <li><a href="#">Macbook Air</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseThree">
+                                inv
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <ul class="submenu" >
+                                    <li><a class="active" href="#">Dell Acron</a></li>
+                                    <li><a href="#">HP Envy</a></li>
+                                    <li><a href="#">Macbook Air</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-sm-12 col-lg-8">
                 <div class="cards-container">
@@ -341,14 +399,14 @@
                         <div class="swiper card-swiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide ">
-                                    <a class="center flex-column gap-2" href="#">
+                                    <div class="center flex-column gap-2">
                                         <img class="img-fluid" src="images/IMG_7023 1.png" alt="">
-                                    </a>
+                                    </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a class="center flex-column gap-2" href="#">
+                                    <div class="center flex-column gap-2" >
                                         <img class="img-fluid" src="images/200 2.png" alt="">
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="swiper-pagination"></div>
@@ -358,7 +416,11 @@
                         <a href="product.html">
                             <h4 class="fw-bold">mtu-30</h4>
                         </a>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, laborum.</p>
+                        <p> Lorem ipsum dolor sit amet
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet
+                        </p>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="">
                             <label class="form-check-label">
@@ -591,28 +653,28 @@
     <script>
         $(function () {
             // Accordion
-            var Accordion = function (el, multiple) {
-                this.el = el || {};
-                this.multiple = multiple || false;
-                var links = this.el.find('.link');
-                links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown)
-            }
-            Accordion.prototype.dropdown = function (e) {
-                var $el = e.data.el;
-                $this = $(this),
-                    $next = $this.next();
-                $next.slideToggle();
-                $this.parent().toggleClass('open');
-                // if (!e.data.multiple) {
-                //     $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
-                // };
-            }
-            var accordion = new Accordion($('#accordion'), false);
+            // var Accordion = function (el, multiple) {
+            //     this.el = el || {};
+            //     this.multiple = multiple || false;
+            //     var links = this.el.find('.link');
+            //     links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown)
+            // }
+            // Accordion.prototype.dropdown = function (e) {
+            //     var $el = e.data.el;
+            //     $this = $(this),
+            //         $next = $this.next();
+            //     $next.slideToggle();
+            //     $this.parent().toggleClass('open');
+            //     // if (!e.data.multiple) {
+            //     //     $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+            //     // };
+            // }
+            // var accordion = new Accordion($('#accordion'), false);
             $(".submenu a").on("click", function () {
                 $(".submenu a").removeClass("active");
                 $(this).addClass("active");
             });
-            // compare
+            // // compare
             $(".up-btn").on("click", function () {
                 $(".compare").toggleClass("active");
             });
