@@ -118,11 +118,15 @@ const similarSwiper = new Swiper(".swiper.similar-swiper", {
     },
     // when window width is >= 640px
     640: {
-      slidesPerView: 21,
+      slidesPerView:2,
+      spaceBetween: 10,
+    },
+    800: {
+      slidesPerView:3,
       spaceBetween: 10,
     },
     1000: {
-      slidesPerView: 5,
+      slidesPerView: 4.5,
       spaceBetween: 3,
     },
   },

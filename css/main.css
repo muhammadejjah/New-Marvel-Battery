@@ -839,9 +839,9 @@ body {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: center;
     margin-top: 60px;
-    gap: calc(20%/3);
+    gap: calc(20%/4);
 
 }
 
@@ -1114,7 +1114,7 @@ ul {
     grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
     grid-auto-rows: 1fr;
     grid-row-gap: 10px;
-    grid-column-gap: 20px;
+    grid-column-gap: 10px;
 
 }
 
@@ -1129,9 +1129,21 @@ ul {
     margin-bottom: 7px;
     transition: all 300ms;
     z-index: 3;
+    border: solid 1px #bbb;
+    box-shadow: -1px -1px 4px #aaa,1px 1px 4px #aaa ;
 }
-
-
+.product-card:hover{
+    box-shadow: -1px -1px 4px #00F0FF,1px 1px 4px #4200FF ;
+    animation: card-ani 2s linear infinite alternate;
+}
+@keyframes card-ani {
+    from{
+        box-shadow: -1px -1px 4px #00F0FF,1px 1px 4px #4200FF ;
+    }
+    to{
+        box-shadow: -1px -1px 4px #4200FF,1px 1px 4px #00F0FF ;
+    }
+}
 .card-swiper {
     width: 100%;
 }
@@ -1524,6 +1536,9 @@ ul {
 .ew-img-content {
     padding: 10px 0 200px 0;
     overflow: hidden;
+}
+.ew-img{
+    width: 85%;
 }
 
 .ew-pop-1 {
