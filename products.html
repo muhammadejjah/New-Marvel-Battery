@@ -660,45 +660,20 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/main.js"></script>
+    <!-- accordion -->
     <script>
         $(function () {
-            // Accordion
-            // var Accordion = function (el, multiple) {
-            //     this.el = el || {};
-            //     this.multiple = multiple || false;
-            //     var links = this.el.find('.link');
-            //     links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown)
-            // }
-            // Accordion.prototype.dropdown = function (e) {
-            //     var $el = e.data.el;
-            //     $this = $(this),
-            //         $next = $this.next();
-            //     $next.slideToggle();
-            //     $this.parent().toggleClass('open');
-            //     // if (!e.data.multiple) {
-            //     //     $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
-            //     // };
-            // }
-            // var accordion = new Accordion($('#accordion'), false);
             $(".submenu a").on("click", function () {
                 $(".submenu a").removeClass("active");
                 $(this).addClass("active");
             });
-            // // compare
+            // open compare
             $(".up-btn").on("click", function () {
                 $(".compare").toggleClass("active");
             });
         });
     </script>
-    <script>
-        window.onwheel = (event) => {
-            if (event.deltaY < 0) {
-                $(".category-nav").css("top", "59px");
-            } else if (event.deltaY > 0) {
-                $(".category-nav").css("top", "-120px");
-            }
-        };
-    </script>
+    <!-- compare -->
     <script>
         $(function () {
             $(".form-check-input").change(function (e) {
@@ -713,12 +688,12 @@
                     } else {
                         this.checked = false
                         Swal.fire({
-                            title: 'Error!',
-                            text: 'Do you want to continue',
-                            icon: 'error',
-                            confirmButtonText: 'Cool',
-                            timer: 2000
+                            text: 'Only 3 items can be compared',
+                            icon: 'warning',
+                            timer: 3000,
+                            showConfirmButton: false,
                         })
+                        
                     }
                 } else {
                     let newArray = savedArray.filter((el) => el.id !== data.id)
@@ -736,7 +711,6 @@
                 $(".compare").removeClass("active");
                 $(".compare").addClass("close");
             });
-
         })
     </script>
 </body>

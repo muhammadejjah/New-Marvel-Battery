@@ -1,5 +1,6 @@
 $(function () {
   "use strict";
+  
   $(".nav-link").on("click", function () {
     $(".nav-link").removeClass("active-nav");
     $(this).addClass("active-nav");
@@ -27,6 +28,7 @@ $(function () {
     $(".btn").toggleClass("close");
     $(".input").toggleClass("inclicked");
   });
+
   let controller = false;
   let whatsapp = () => {
     if (controller) {
@@ -45,6 +47,7 @@ $(function () {
     controller = !controller;
     whatsapp();
   });
+
   let darkMood = JSON.parse(localStorage.getItem("darkMood"));
   const darkModeFun = () => {
     if (darkMood === true) {
@@ -55,10 +58,10 @@ $(function () {
         "--form-color": "#f9ebeb85",
         "--black-color":"white",
       });
-      $("footer").css({
-        "background-color": "#141414",
-        "background-image": "none",
-      });
+      // $("footer").css({
+      //   "background-color": "#141414",
+      //   "background-image": "none",
+      // });
       $(".landing").css("filter", "brightness(90%)");
     } else {
       $(":root").css({
@@ -68,14 +71,15 @@ $(function () {
         "--form-color": "white",
         "--black-color":"black",
       });
-      $("footer").css({
-        "background-color": "#141414",
-        "background-image":
-          "linear-gradient(180deg, #0E83B1, #0B71A8, #144D8B, #3C2866)",
-      });
-      $(".landing").css("filter", "brightness(100%)");
+      // $("footer").css({
+      //   "background-color": "#141414",
+      //   "background-image":
+      //     "linear-gradient(180deg, #0E83B1, #0B71A8, #144D8B, #3C2866)",
+      // });
+      // $(".landing").css("filter", "brightness(100%)");
     }
   };
+
   let dark = JSON.parse(localStorage.getItem("darkMood"));
   window.onload = () => {
     if (dark === null) {
@@ -102,6 +106,14 @@ $(function () {
       $(".dark-icon").removeClass("opacity-0");
     }
   });
+
+  window.onwheel = (event) => {
+    if (event.deltaY < 0) {
+      $(".category-nav").css("top", "59px");
+    } else if (event.deltaY > 0) {
+      $(".category-nav").css("top", "-120px");
+    }
+  };
   darkModeFun();
   
 });
